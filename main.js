@@ -50,7 +50,35 @@ const createUserCard = (user) => {
   phone.textContent = user.phone;
   card.appendChild(phone);
 
+  const moreInfoButton = document.createElement('button');
+  moreInfoButton.textContent = 'Show More';
+  moreInfoButton.addEventListener('click', () => showMoreInfo(user, card));
+  card.appendChild(moreInfoButton);
+
+  const moreInfoContainer = document.createElement('div');
+  moreInfoContainer.classList.add('more-info');
+  card.appendChild(moreInfoContainer);
+
   return card;
+};
+
+const showMoreInfo = (user, card) => {
+  const moreInfoContainer = card.querySelector('.more-info');
+
+  moreInfoContainer.style.display = moreInfoContainer.style.display === 'none' ? 'block' : 'none';
+  moreInfoContainer.innerHTML = '';
+
+  const dob = document.createElement('p');
+  dob.textContent = `DOB: ${user.dob.date}`;
+  moreInfoContainer.appendChild(dob);
+
+  const registered = document.createElement('p');
+  registered.textContent = `Registered: ${user.registered.date}`;
+  moreInfoContainer.appendChild(registered);
+
+  const nat = document.createElement('p');
+  nat.textContent = `Nationality: ${user.nat}`;
+  moreInfoContainer.appendChild(nat);
 };
 
 const calculateNumCards = () => {

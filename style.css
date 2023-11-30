@@ -2,37 +2,58 @@ body {
     font-family: 'Arial', sans-serif;
     text-align: center;
     margin-top: 20px;
-  }
-  
-  h1 {
+}
+
+h1 {
     color: darkblue;
-  }
-  
-  .user-card {
-    border: 1px solid lightcyan;
+}
+
+#usersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.user-card {
+    border: 1px solid lightblue;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px black;
     display: flex;
-  }
-  
-  img {
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
     border-radius: 50%;
     margin-bottom: 10px;
-  }
-  
-  /* Responsive styles for tablets */
-  @media screen and (max-width: 768px) {
+}
+
+/* Responsive styles for tablets */
+@media screen and (max-width: 768px) {
     .user-card {
-      width: 45%;
+        width: 45%;
     }
-  }
-  
-  /* Responsive styles for mobile devices */
-  @media screen and (max-width: 480px) {
+}
+
+/* Responsive styles for mobile devices */
+@media screen and (max-width: 480px) {
     .user-card {
-      width: 100%;
+        width: 100%;
     }
+}
+
+button {
+    margin-top: 10px;
+    cursor: pointer;
   }
   
+  .more-info {
+    display: none;
+    margin-top: 10px;
+  }
+  
+  .more-info p {
+    margin: 5px 0;
+  }
